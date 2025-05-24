@@ -80,7 +80,7 @@ export default function DJLLMApp() {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
                 DJ LLM
               </h1>
-              <span className="text-sm text-gray-400 ml-2">AI-Powered Playlist Generator</span>
+              <span className="text-sm text-white ml-2">AI-Powered Playlist Generator</span>
 
               {/* Debug link */}
               <div className="ml-auto">
@@ -88,7 +88,7 @@ export default function DJLLMApp() {
                   onClick={() => window.open("/test-spotify-debug", "_blank")}
                   variant="ghost"
                   size="sm"
-                  className="text-xs text-gray-500 hover:text-gray-300"
+                  className="text-xs text-white hover:text-gray-300"
                 >
                   Debug
                 </Button>
@@ -104,9 +104,9 @@ export default function DJLLMApp() {
               <CardContent className="p-4">
                 <div className="flex items-center gap-2">
                   <AlertCircle className="w-5 h-5 text-red-400" />
-                  <span className="font-semibold text-red-400">Error</span>
+                  <span className="font-semibold text-white">Error</span>
                 </div>
-                <p className="text-sm text-gray-300 mt-1">{error}</p>
+                <p className="text-sm text-white mt-1">{error}</p>
                 <Button
                   onClick={() => setError(null)}
                   variant="ghost"
@@ -141,8 +141,8 @@ export default function DJLLMApp() {
                       style={{ animationDelay: "0.5s" }}
                     />
                   </div>
-                  <h2 className="text-2xl font-bold mb-2">DJ LLM</h2>
-                  <p className="text-gray-400 mb-4">Your AI Music Curator</p>
+                  <h2 className="text-2xl font-bold mb-2 text-white">DJ LLM</h2>
+                  <p className="text-white mb-4">Your AI Music Curator</p>
                   <div className="flex justify-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <div
@@ -157,6 +157,11 @@ export default function DJLLMApp() {
                 </CardContent>
               </Card>
 
+              {/* Spotify Integration - Moved to top-left for better workflow */}
+              {playlist && playlist.playlist && playlist.playlist.length > 0 && (
+                <SpotifyIntegration playlist={playlist} vibe={vibe} />
+              )}
+
               {/* Vibe Input */}
               <Card className="bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700 text-white">
                 <CardContent className="p-6 text-white">
@@ -170,7 +175,7 @@ export default function DJLLMApp() {
                       value={vibe}
                       onChange={(e) => setVibe(e.target.value)}
                       onKeyPress={handleKeyPress}
-                      className="bg-gray-900 border-gray-600 text-white placeholder-white/60 focus:border-green-500 focus:ring-green-500"
+                      className="bg-gray-900 border-gray-600 text-white placeholder-white/80 focus:border-green-500 focus:ring-green-500"
                     />
                     <Button
                       onClick={generatePlaylist}
@@ -237,7 +242,7 @@ export default function DJLLMApp() {
                                     <h4 className="font-semibold text-white group-hover:text-green-400 transition-colors">
                                       {song.title}
                                     </h4>
-                                    <p className="text-gray-400 text-sm">{song.artist}</p>
+                                    <p className="text-white text-sm">{song.artist}</p>
                                   </div>
                                 </div>
                                 <div className="flex items-center gap-4 text-xs text-gray-500 ml-9">
@@ -262,9 +267,6 @@ export default function DJLLMApp() {
                       </div>
                     </CardContent>
                   </Card>
-
-                  {/* Spotify Integration */}
-                  <SpotifyIntegration playlist={playlist} vibe={vibe} />
                 </>
               )}
 
@@ -272,8 +274,8 @@ export default function DJLLMApp() {
                 <Card className="bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700 border-dashed text-white">
                   <CardContent className="p-12 text-center text-white">
                     <Music className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-400 mb-2">Ready to Drop Some Beats?</h3>
-                    <p className="text-gray-500">Tell me your vibe and I'll curate the perfect playlist for you!</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">Ready to Drop Some Beats?</h3>
+                    <p className="text-white">Tell me your vibe and I'll curate the perfect playlist for you!</p>
                   </CardContent>
                 </Card>
               )}

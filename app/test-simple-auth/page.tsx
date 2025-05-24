@@ -90,11 +90,11 @@ export default function SimpleAuthTest() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <div className="max-w-2xl mx-auto space-y-6">
-        <h1 className="text-3xl font-bold text-center">Simple Auth Test</h1>
+        <h1 className="text-3xl font-bold text-center text-white">Simple Auth Test</h1>
 
         <Card className="bg-gray-800 border-gray-700">
           <CardContent className="p-6 space-y-4">
-            <h2 className="text-xl font-semibold">Test API Route</h2>
+            <h2 className="text-xl font-semibold text-white">Test API Route</h2>
 
             <div className="space-y-3">
               <Button onClick={testHealthCheck} disabled={loading} className="w-full bg-blue-600 hover:bg-blue-700">
@@ -112,9 +112,9 @@ export default function SimpleAuthTest() {
 
             {result && (
               <div className="mt-6 p-4 bg-gray-900 rounded-lg">
-                <h3 className="font-semibold mb-2">{result.success ? "✅ Success" : "❌ Error"}</h3>
+                <h3 className="font-semibold mb-2 text-white">{result.success ? "✅ Success" : "❌ Error"}</h3>
 
-                {result.status && <div className="text-sm mb-2">Status: {result.status}</div>}
+                {result.status && <div className="text-sm mb-2 text-white">Status: {result.status}</div>}
 
                 <pre className="text-xs overflow-auto whitespace-pre-wrap">{JSON.stringify(result, null, 2)}</pre>
               </div>
@@ -124,8 +124,8 @@ export default function SimpleAuthTest() {
 
         <Card className="bg-gray-800 border-gray-700">
           <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-4">Instructions</h2>
-            <div className="space-y-2 text-sm">
+            <h2 className="text-xl font-semibold mb-4 text-white">Instructions</h2>
+            <div className="space-y-2 text-sm text-white">
               <div>
                 1. <strong>Test Health Check:</strong> Tests the POST endpoint
               </div>

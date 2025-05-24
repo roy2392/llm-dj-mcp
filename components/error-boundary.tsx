@@ -40,14 +40,14 @@ export class ErrorBoundary extends Component<Props, State> {
             <div className="flex items-center gap-3 mb-4">
               <AlertCircle className="w-8 h-8 text-red-400" />
               <div>
-                <h3 className="text-lg font-semibold text-red-400">Something went wrong</h3>
-                <p className="text-sm text-gray-300">An unexpected error occurred</p>
+                <h3 className="text-lg font-semibold text-white">Something went wrong</h3>
+                <p className="text-sm text-white">An unexpected error occurred</p>
               </div>
             </div>
 
             {this.state.error && (
               <div className="bg-gray-900/50 border border-gray-700 rounded p-3 mb-4">
-                <p className="text-xs text-gray-400 font-mono">{this.state.error.message}</p>
+                <p className="text-xs text-white font-mono">{this.state.error.message}</p>
               </div>
             )}
 

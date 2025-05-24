@@ -57,12 +57,12 @@ export default function SpotifyDebugPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white p-8">
       <div className="max-w-4xl mx-auto space-y-6">
-        <h1 className="text-3xl font-bold text-center">Spotify Integration Debug</h1>
+        <h1 className="text-3xl font-bold text-center text-white">Spotify Integration Debug</h1>
 
         {/* Health Check */}
         <Card className="bg-gray-800 border-gray-700">
           <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-4">Health Check</h2>
+            <h2 className="text-xl font-semibold mb-4 text-white">Health Check</h2>
 
             <Button onClick={runHealthCheck} disabled={loading} className="mb-4 bg-blue-600 hover:bg-blue-700">
               {loading ? (
@@ -79,9 +79,9 @@ export default function SpotifyDebugPage() {
               <div className="bg-red-900/50 border border-red-700 rounded-lg p-4 mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <AlertCircle className="w-5 h-5 text-red-400" />
-                  <span className="font-semibold text-red-400">Error</span>
+                  <span className="font-semibold text-white">Error</span>
                 </div>
-                <p className="text-sm text-gray-300">{error}</p>
+                <p className="text-sm text-white">{error}</p>
               </div>
             )}
 
@@ -89,10 +89,10 @@ export default function SpotifyDebugPage() {
               <div className="bg-green-900/50 border border-green-700 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="font-semibold text-green-400">Health Check Results</span>
+                  <span className="font-semibold text-white">Health Check Results</span>
                 </div>
 
-                <div className="space-y-3 text-sm">
+                <div className="space-y-3 text-sm text-white">
                   <div>
                     <strong>Status:</strong> {healthCheck.status}
                   </div>
@@ -124,7 +124,7 @@ export default function SpotifyDebugPage() {
         {/* Test Actions */}
         <Card className="bg-gray-800 border-gray-700">
           <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-4">Test Actions</h2>
+            <h2 className="text-xl font-semibold mb-4 text-white">Test Actions</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Button onClick={testDirectAccess} className="bg-purple-600 hover:bg-purple-700">
@@ -151,7 +151,7 @@ export default function SpotifyDebugPage() {
         {/* Environment Info */}
         <Card className="bg-gray-800 border-gray-700">
           <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-4">Environment Information</h2>
+            <h2 className="text-xl font-semibold mb-4 text-white">Environment Information</h2>
 
             <div className="space-y-2 text-sm">
               <div>Current URL: {typeof window !== "undefined" ? window.location.href : "N/A"}</div>
@@ -166,9 +166,9 @@ export default function SpotifyDebugPage() {
         {/* Instructions */}
         <Card className="bg-blue-900/20 border-blue-700">
           <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-4">Debug Instructions</h2>
+            <h2 className="text-xl font-semibold mb-4 text-white">Debug Instructions</h2>
 
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-sm text-white">
               <div>
                 <strong>1. Run Health Check:</strong> This will test the API route and show configuration status
               </div>

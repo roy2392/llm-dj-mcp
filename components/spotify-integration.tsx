@@ -333,8 +333,8 @@ export function SpotifyIntegration({ playlist, vibe }: SpotifyIntegrationProps) 
             <Spotify className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold">Save to Spotify</h3>
-            <p className="text-sm text-gray-300">Export your AI-curated playlist to Spotify</p>
+            <h3 className="text-xl font-semibold text-white">Save to Spotify</h3>
+            <p className="text-sm text-white">Export your AI-curated playlist to Spotify</p>
           </div>
         </div>
 
@@ -343,8 +343,8 @@ export function SpotifyIntegration({ playlist, vibe }: SpotifyIntegrationProps) 
             <div className="flex items-center gap-3">
               <Loader2 className="w-5 h-5 animate-spin text-blue-400" />
               <div>
-                <div className="font-semibold text-blue-400">Creating Your Playlist</div>
-                <div className="text-sm text-gray-300">{creationProgress}</div>
+                <div className="font-semibold text-white">Creating Your Playlist</div>
+                <div className="text-sm text-white">{creationProgress}</div>
               </div>
             </div>
             <div className="mt-3 bg-gray-800 rounded-full h-2">
@@ -392,11 +392,9 @@ export function SpotifyIntegration({ playlist, vibe }: SpotifyIntegrationProps) 
         {!isConnected || isTokenExpired() ? (
           <div className="space-y-4">
             <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-4">
-              <h4 className="font-semibold mb-2">Connect Your Spotify Account</h4>
-              <p className="text-sm text-gray-300 mb-3">
-                We need permission to create playlists in your Spotify account.
-              </p>
-              <div className="text-xs text-gray-400 space-y-1">
+              <h4 className="font-semibold mb-2 text-white">Connect Your Spotify Account</h4>
+              <p className="text-sm text-white mb-3">We need permission to create playlists in your Spotify account.</p>
+              <div className="text-xs text-white space-y-1">
                 <div>✓ Create private playlists</div>
                 <div>✓ Access your profile information</div>
                 <div>✓ No access to existing playlists or listening history</div>
@@ -432,7 +430,7 @@ export function SpotifyIntegration({ playlist, vibe }: SpotifyIntegrationProps) 
             <div className="bg-green-900/50 border border-green-700 rounded-lg p-4">
               <div className="flex items-center gap-2 mb-3">
                 <CheckCircle className="w-6 h-6 text-green-400" />
-                <span className="font-semibold text-green-400 text-lg">Playlist Created! 🎉</span>
+                <span className="font-semibold text-white text-lg">Playlist Created! 🎉</span>
               </div>
 
               <div className="space-y-2 text-sm text-gray-300 mb-4">
@@ -491,8 +489,8 @@ export function SpotifyIntegration({ playlist, vibe }: SpotifyIntegrationProps) 
                 <div className="flex items-center gap-2">
                   <div className={`w-2 h-2 rounded-full ${isTokenExpired() ? "bg-red-500" : "bg-green-500"}`} />
                   <User className="w-4 h-4 text-green-400" />
-                  <span className="text-sm text-green-400">Connected:</span>
-                  <span className="font-medium">{userInfo.display_name || userInfo.id}</span>
+                  <span className="text-sm text-white">Connected as:</span>
+                  <span className="font-medium text-white">{userInfo.display_name || userInfo.id}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   {tokenExpiry && (
@@ -549,9 +547,9 @@ export function SpotifyIntegration({ playlist, vibe }: SpotifyIntegrationProps) 
             </div>
 
             <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-3">
-              <div className="text-sm text-gray-300">
-                <div className="font-medium mb-1">Ready to create:</div>
-                <div className="text-xs text-gray-400">
+              <div className="text-sm text-white">
+                <div className="font-medium mb-1 text-white">Ready to create:</div>
+                <div className="text-xs text-white">
                   • {playlist.playlist.length} tracks will be searched and added
                   <br />• Playlist will be private by default
                   <br />• You can edit it later in Spotify
